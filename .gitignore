@@ -1,9 +1,20 @@
+# Xcode User Data
+xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
 
 ## User settings
 xcuserdata/
 
-## Obj-C/Swift specific
-*.hmap
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+Package.pins
 
 # Logs
 *.log
@@ -19,6 +30,9 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+## Obj-C/Swift specific
+*.hmap
 
 # Xcode 16 specific
 *.xcuserstate
@@ -51,9 +65,3 @@ TestResults/
 
 # Instruments
 *.trace
-
-
-# Swift Package Manager (modern)
-.swiftpm/
-Package.resolved
-Package.pins
