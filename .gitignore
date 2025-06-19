@@ -136,4 +136,48 @@ logs/
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp
+
+# Xcode 16 specific
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# SwiftUI Preview Content
+**/Preview Content/
+
+# App Store Connect
+*.appstore
+
+# Test results
+TestResults/
+*.testresult
+
+# Coverage reports
+*.coverage.txt
+*.gcda
+*.gcno
+
+# Profiling data
+*.profdata
+*.profraw
+
+# LLVM coverage mapping
+*.profdata
+*.profraw
+
+# Instruments
+*.trace
+
+# Xcode Cloud
+.xcode-cloud/
+
+# Swift Package Manager (modern)
+.swiftpm/
+Package.resolved
+Package.pins
+
+# Tuist
+.tuist/
+Tuist/ 
