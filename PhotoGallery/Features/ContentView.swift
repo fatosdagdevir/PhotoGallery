@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  PhotoGallery
-//
-//  Created by Fatma Dagdevir on 19.06.25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
