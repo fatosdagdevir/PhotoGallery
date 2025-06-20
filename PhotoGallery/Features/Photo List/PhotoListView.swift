@@ -1,6 +1,8 @@
 import SwiftUI
 
-struct ContentView: View {
+struct PhotoListView: View {
+    @ObservedObject var viewModel: PhotoListViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -13,5 +15,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    PhotoListView(
+        viewModel: .init(navigator: Navigator())
+    )
 }

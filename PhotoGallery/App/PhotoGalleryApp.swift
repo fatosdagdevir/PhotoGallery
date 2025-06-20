@@ -2,9 +2,11 @@ import SwiftUI
 
 @main
 struct PhotoGalleryApp: App {
+    @StateObject private var navigator = Navigator()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           AppCoordinator(navigator: navigator)
         }
     }
 }
