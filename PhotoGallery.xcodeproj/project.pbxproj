@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		BB360D272E06CBE10075A5DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB360C4D2E0497DE0075A5DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB360C542E0497DE0075A5DC;
+			remoteInfo = PhotoGallery;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BB360C552E0497DE0075A5DC /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB360D232E06CBE10075A5DC /* PhotoGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
+		BB360D242E06CBE10075A5DC /* PhotoGalleryTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PhotoGalleryTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB360C522E0497DE0075A5DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB360D202E06CBE10075A5DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				BB360C572E0497DE0075A5DC /* PhotoGallery */,
+				BB360D242E06CBE10075A5DC /* PhotoGalleryTests */,
 				BB360C562E0497DE0075A5DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				BB360C552E0497DE0075A5DC /* PhotoGallery.app */,
+				BB360D232E06CBE10075A5DC /* PhotoGalleryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = BB360C552E0497DE0075A5DC /* PhotoGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB360D222E06CBE10075A5DC /* PhotoGalleryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB360D292E06CBE10075A5DC /* Build configuration list for PBXNativeTarget "PhotoGalleryTests" */;
+			buildPhases = (
+				BB360D1F2E06CBE10075A5DC /* Sources */,
+				BB360D202E06CBE10075A5DC /* Frameworks */,
+				BB360D212E06CBE10075A5DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB360D282E06CBE10075A5DC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BB360D242E06CBE10075A5DC /* PhotoGalleryTests */,
+			);
+			name = PhotoGalleryTests;
+			packageProductDependencies = (
+			);
+			productName = PhotoGalleryTests;
+			productReference = BB360D232E06CBE10075A5DC /* PhotoGalleryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					BB360C542E0497DE0075A5DC = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					BB360D222E06CBE10075A5DC = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = BB360C542E0497DE0075A5DC;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				BB360C542E0497DE0075A5DC /* PhotoGallery */,
+				BB360D222E06CBE10075A5DC /* PhotoGalleryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BB360C532E0497DE0075A5DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB360D212E06CBE10075A5DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB360D1F2E06CBE10075A5DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB360D282E06CBE10075A5DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB360C542E0497DE0075A5DC /* PhotoGallery */;
+			targetProxy = BB360D272E06CBE10075A5DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BB360C5E2E0497E10075A5DC /* Debug */ = {
@@ -302,6 +377,42 @@
 			};
 			name = Release;
 		};
+		BB360D2A2E06CBE10075A5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27YU34ECNS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fatmadagdevir.PhotoGalleryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoGallery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PhotoGallery";
+			};
+			name = Debug;
+		};
+		BB360D2B2E06CBE10075A5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27YU34ECNS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fatmadagdevir.PhotoGalleryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoGallery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PhotoGallery";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +430,15 @@
 			buildConfigurations = (
 				BB360C612E0497E10075A5DC /* Debug */,
 				BB360C622E0497E10075A5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB360D292E06CBE10075A5DC /* Build configuration list for PBXNativeTarget "PhotoGalleryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB360D2A2E06CBE10075A5DC /* Debug */,
+				BB360D2B2E06CBE10075A5DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
