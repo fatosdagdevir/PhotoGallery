@@ -11,11 +11,17 @@ struct PhotoListView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            await viewModel.fetchPhotoGallery()
+        }
     }
 }
 
 #Preview {
     PhotoListView(
-        viewModel: .init(navigator: Navigator())
+        viewModel: .init(
+            navigator: Navigator(),
+            photoListService: PhotoListService()
+        )
     )
 }

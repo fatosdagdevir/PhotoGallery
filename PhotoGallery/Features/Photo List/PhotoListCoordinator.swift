@@ -6,9 +6,13 @@ struct PhotoListCoordinator: View {
     }
     
     @ObservedObject var navigator: Navigator
+    let photoListService: PhotoListing
     
     var body: some View {
-        let viewModel = PhotoListViewModel(navigator: navigator)
+        let viewModel = PhotoListViewModel(
+            navigator: navigator,
+            photoListService: photoListService
+        )
         return PhotoListView(viewModel: viewModel)
             .navigationDestination(for: PhotoListDestination.self, destination: { destination in
                 switch destination {
