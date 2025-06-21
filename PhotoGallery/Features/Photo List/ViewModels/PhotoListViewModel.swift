@@ -2,11 +2,11 @@ import Foundation
 
 @MainActor
 final class PhotoListViewModel: ObservableObject {
-    private let navigator: Navigator
+    private let navigator: Navigating
     private let photoListService: PhotoListing
 
     init(
-        navigator: Navigator,
+        navigator: Navigating,
         photoListService: PhotoListing
     ) {
         self.navigator = navigator
