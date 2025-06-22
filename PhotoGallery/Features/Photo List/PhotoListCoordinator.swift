@@ -8,12 +8,19 @@ struct PhotoListCoordinator: View {
     @ObservedObject var navigator: Navigator
     let photoListService: PhotoListing
     
-    var body: some View {
-        let viewModel = PhotoListViewModel(
+    @StateObject private var viewModel: PhotoListViewModel
+    
+    init(navigator: Navigator, photoListService: PhotoListing) {
+        self.navigator = navigator
+        self.photoListService = photoListService
+        self._viewModel = StateObject(wrappedValue: PhotoListViewModel(
             navigator: navigator,
             photoListService: photoListService
-        )
-        return PhotoListView(viewModel: viewModel)
+        ))
+    }
+    
+    var body: some View {
+        PhotoListView(viewModel: viewModel)
             .navigationDestination(for: PhotoListDestination.self, destination: { destination in
                 switch destination {
                 case let .photoDetail(id):
