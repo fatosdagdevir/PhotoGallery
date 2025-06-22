@@ -6,6 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BB360D732E0805BA0075A5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB360D702E0805BA0075A5DC /* Assets.xcassets */; };
+		BB360D742E0805BA0075A5DC /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D4B2E0805BA0075A5DC /* AppRootView.swift */; };
+		BB360D752E0805BA0075A5DC /* PhotoGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D4C2E0805BA0075A5DC /* PhotoGalleryApp.swift */; };
+		BB360D762E0805BA0075A5DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D4E2E0805BA0075A5DC /* AppConstants.swift */; };
+		BB360D772E0805BA0075A5DC /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D502E0805BA0075A5DC /* DependencyContainer.swift */; };
+		BB360D782E0805BA0075A5DC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D522E0805BA0075A5DC /* Navigator.swift */; };
+		BB360D792E0805BA0075A5DC /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */; };
+		BB360D7A2E0805BA0075A5DC /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D552E0805BA0075A5DC /* HTTP.swift */; };
+		BB360D7B2E0805BA0075A5DC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D562E0805BA0075A5DC /* Network.swift */; };
+		BB360D7C2E0805BA0075A5DC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D572E0805BA0075A5DC /* NetworkError.swift */; };
+		BB360D7D2E0805BA0075A5DC /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D582E0805BA0075A5DC /* RequestProtocol.swift */; };
+		BB360D7E2E0805BA0075A5DC /* URL+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */; };
+		BB360D7F2E0805BA0075A5DC /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5A2E0805BA0075A5DC /* URLRequest.swift */; };
+		BB360D802E0805BA0075A5DC /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5C2E0805BA0075A5DC /* PhotoDTO.swift */; };
+		BB360D812E0805BA0075A5DC /* PhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5E2E0805BA0075A5DC /* PhotoProvider.swift */; };
+		BB360D822E0805BA0075A5DC /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D622E0805BA0075A5DC /* PhotoDetailView.swift */; };
+		BB360D832E0805BA0075A5DC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D642E0805BA0075A5DC /* Photo.swift */; };
+		BB360D842E0805BA0075A5DC /* PhotoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D662E0805BA0075A5DC /* PhotoListService.swift */; };
+		BB360D852E0805BA0075A5DC /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D692E0805BA0075A5DC /* PhotoListViewModel.swift */; };
+		BB360D862E0805BA0075A5DC /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D6B2E0805BA0075A5DC /* PhotoListView.swift */; };
+		BB360D872E0805BA0075A5DC /* PhotoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D6D2E0805BA0075A5DC /* PhotoListCoordinator.swift */; };
+		BB360D952E0805C60075A5DC /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D882E0805C60075A5DC /* DependencyContainerTests.swift */; };
+		BB360D962E0805C60075A5DC /* MockNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D8A2E0805C60075A5DC /* MockNavigator.swift */; };
+		BB360D972E0805C60075A5DC /* NavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D8C2E0805C60075A5DC /* NavigatorTests.swift */; };
+		BB360D982E0805C60075A5DC /* MockPhotoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D8F2E0805C60075A5DC /* MockPhotoListService.swift */; };
+		BB360D992E0805C60075A5DC /* PhotoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D912E0805C60075A5DC /* PhotoListViewModelTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BB360D272E06CBE10075A5DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -19,20 +48,33 @@
 /* Begin PBXFileReference section */
 		BB360C552E0497DE0075A5DC /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB360D232E06CBE10075A5DC /* PhotoGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB360D4B2E0805BA0075A5DC /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		BB360D4C2E0805BA0075A5DC /* PhotoGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryApp.swift; sourceTree = "<group>"; };
+		BB360D4E2E0805BA0075A5DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		BB360D502E0805BA0075A5DC /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		BB360D522E0805BA0075A5DC /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		BB360D552E0805BA0075A5DC /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		BB360D562E0805BA0075A5DC /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		BB360D572E0805BA0075A5DC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BB360D582E0805BA0075A5DC /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Endpoint.swift"; sourceTree = "<group>"; };
+		BB360D5A2E0805BA0075A5DC /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		BB360D5C2E0805BA0075A5DC /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		BB360D5E2E0805BA0075A5DC /* PhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProvider.swift; sourceTree = "<group>"; };
+		BB360D622E0805BA0075A5DC /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		BB360D642E0805BA0075A5DC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BB360D662E0805BA0075A5DC /* PhotoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListService.swift; sourceTree = "<group>"; };
+		BB360D692E0805BA0075A5DC /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		BB360D6B2E0805BA0075A5DC /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
+		BB360D6D2E0805BA0075A5DC /* PhotoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCoordinator.swift; sourceTree = "<group>"; };
+		BB360D702E0805BA0075A5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB360D882E0805C60075A5DC /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
+		BB360D8A2E0805C60075A5DC /* MockNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigator.swift; sourceTree = "<group>"; };
+		BB360D8C2E0805C60075A5DC /* NavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorTests.swift; sourceTree = "<group>"; };
+		BB360D8F2E0805C60075A5DC /* MockPhotoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoListService.swift; sourceTree = "<group>"; };
+		BB360D912E0805C60075A5DC /* PhotoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		BB360C572E0497DE0075A5DC /* PhotoGallery */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PhotoGallery;
-			sourceTree = "<group>";
-		};
-		BB360D242E06CBE10075A5DC /* PhotoGalleryTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PhotoGalleryTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB360C522E0497DE0075A5DC /* Frameworks */ = {
@@ -55,8 +97,8 @@
 		BB360C4C2E0497DE0075A5DC = {
 			isa = PBXGroup;
 			children = (
-				BB360C572E0497DE0075A5DC /* PhotoGallery */,
-				BB360D242E06CBE10075A5DC /* PhotoGalleryTests */,
+				BB360D722E0805BA0075A5DC /* PhotoGallery */,
+				BB360D942E0805C60075A5DC /* PhotoGalleryTests */,
 				BB360C562E0497DE0075A5DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +110,246 @@
 				BB360D232E06CBE10075A5DC /* PhotoGalleryTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BB360D4D2E0805BA0075A5DC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D4C2E0805BA0075A5DC /* PhotoGalleryApp.swift */,
+				BB360D4B2E0805BA0075A5DC /* AppRootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BB360D4F2E0805BA0075A5DC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D4E2E0805BA0075A5DC /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		BB360D512E0805BA0075A5DC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D502E0805BA0075A5DC /* DependencyContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		BB360D532E0805BA0075A5DC /* Navigating */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D522E0805BA0075A5DC /* Navigator.swift */,
+			);
+			path = Navigating;
+			sourceTree = "<group>";
+		};
+		BB360D5B2E0805BA0075A5DC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */,
+				BB360D552E0805BA0075A5DC /* HTTP.swift */,
+				BB360D562E0805BA0075A5DC /* Network.swift */,
+				BB360D572E0805BA0075A5DC /* NetworkError.swift */,
+				BB360D582E0805BA0075A5DC /* RequestProtocol.swift */,
+				BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */,
+				BB360D5A2E0805BA0075A5DC /* URLRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BB360D5D2E0805BA0075A5DC /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D5C2E0805BA0075A5DC /* PhotoDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		BB360D5F2E0805BA0075A5DC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D5E2E0805BA0075A5DC /* PhotoProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		BB360D602E0805BA0075A5DC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D5D2E0805BA0075A5DC /* DTOs */,
+				BB360D5F2E0805BA0075A5DC /* Providers */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		BB360D612E0805BA0075A5DC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D4F2E0805BA0075A5DC /* Constants */,
+				BB360D512E0805BA0075A5DC /* DI */,
+				BB360D532E0805BA0075A5DC /* Navigating */,
+				BB360D5B2E0805BA0075A5DC /* Networking */,
+				BB360D602E0805BA0075A5DC /* Providers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BB360D632E0805BA0075A5DC /* Photo Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D622E0805BA0075A5DC /* PhotoDetailView.swift */,
+			);
+			path = "Photo Detail";
+			sourceTree = "<group>";
+		};
+		BB360D652E0805BA0075A5DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D642E0805BA0075A5DC /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB360D672E0805BA0075A5DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D662E0805BA0075A5DC /* PhotoListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB360D682E0805BA0075A5DC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D652E0805BA0075A5DC /* Models */,
+				BB360D672E0805BA0075A5DC /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BB360D6A2E0805BA0075A5DC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D692E0805BA0075A5DC /* PhotoListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BB360D6C2E0805BA0075A5DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D6B2E0805BA0075A5DC /* PhotoListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB360D6E2E0805BA0075A5DC /* Photo List */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D6D2E0805BA0075A5DC /* PhotoListCoordinator.swift */,
+				BB360D6C2E0805BA0075A5DC /* Views */,
+				BB360D6A2E0805BA0075A5DC /* ViewModels */,
+				BB360D682E0805BA0075A5DC /* Domain */,
+			);
+			path = "Photo List";
+			sourceTree = "<group>";
+		};
+		BB360D6F2E0805BA0075A5DC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D6E2E0805BA0075A5DC /* Photo List */,
+				BB360D632E0805BA0075A5DC /* Photo Detail */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		BB360D712E0805BA0075A5DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D702E0805BA0075A5DC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BB360D722E0805BA0075A5DC /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D4D2E0805BA0075A5DC /* App */,
+				BB360D612E0805BA0075A5DC /* Core */,
+				BB360D6F2E0805BA0075A5DC /* Features */,
+				BB360D712E0805BA0075A5DC /* Resources */,
+			);
+			path = PhotoGallery;
+			sourceTree = "<group>";
+		};
+		BB360D892E0805C60075A5DC /* DITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D882E0805C60075A5DC /* DependencyContainerTests.swift */,
+			);
+			path = DITests;
+			sourceTree = "<group>";
+		};
+		BB360D8B2E0805C60075A5DC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D8A2E0805C60075A5DC /* MockNavigator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		BB360D8D2E0805C60075A5DC /* NavigatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D8C2E0805C60075A5DC /* NavigatorTests.swift */,
+			);
+			path = NavigatorTests;
+			sourceTree = "<group>";
+		};
+		BB360D8E2E0805C60075A5DC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D8D2E0805C60075A5DC /* NavigatorTests */,
+				BB360D892E0805C60075A5DC /* DITests */,
+				BB360D8B2E0805C60075A5DC /* Mocks */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BB360D902E0805C60075A5DC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D8F2E0805C60075A5DC /* MockPhotoListService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		BB360D922E0805C60075A5DC /* Photo List */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D902E0805C60075A5DC /* Mocks */,
+				BB360D912E0805C60075A5DC /* PhotoListViewModelTests.swift */,
+			);
+			path = "Photo List";
+			sourceTree = "<group>";
+		};
+		BB360D932E0805C60075A5DC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D922E0805C60075A5DC /* Photo List */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		BB360D942E0805C60075A5DC /* PhotoGalleryTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB360D8E2E0805C60075A5DC /* Core */,
+				BB360D932E0805C60075A5DC /* Features */,
+			);
+			path = PhotoGalleryTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,9 +366,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				BB360C572E0497DE0075A5DC /* PhotoGallery */,
 			);
 			name = PhotoGallery;
 			packageProductDependencies = (
@@ -107,9 +386,6 @@
 			);
 			dependencies = (
 				BB360D282E06CBE10075A5DC /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BB360D242E06CBE10075A5DC /* PhotoGalleryTests */,
 			);
 			name = PhotoGalleryTests;
 			packageProductDependencies = (
@@ -162,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB360D732E0805BA0075A5DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +456,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB360D742E0805BA0075A5DC /* AppRootView.swift in Sources */,
+				BB360D752E0805BA0075A5DC /* PhotoGalleryApp.swift in Sources */,
+				BB360D762E0805BA0075A5DC /* AppConstants.swift in Sources */,
+				BB360D772E0805BA0075A5DC /* DependencyContainer.swift in Sources */,
+				BB360D782E0805BA0075A5DC /* Navigator.swift in Sources */,
+				BB360D792E0805BA0075A5DC /* EndpointProtocol.swift in Sources */,
+				BB360D7A2E0805BA0075A5DC /* HTTP.swift in Sources */,
+				BB360D7B2E0805BA0075A5DC /* Network.swift in Sources */,
+				BB360D7C2E0805BA0075A5DC /* NetworkError.swift in Sources */,
+				BB360D7D2E0805BA0075A5DC /* RequestProtocol.swift in Sources */,
+				BB360D7E2E0805BA0075A5DC /* URL+Endpoint.swift in Sources */,
+				BB360D7F2E0805BA0075A5DC /* URLRequest.swift in Sources */,
+				BB360D802E0805BA0075A5DC /* PhotoDTO.swift in Sources */,
+				BB360D812E0805BA0075A5DC /* PhotoProvider.swift in Sources */,
+				BB360D822E0805BA0075A5DC /* PhotoDetailView.swift in Sources */,
+				BB360D832E0805BA0075A5DC /* Photo.swift in Sources */,
+				BB360D842E0805BA0075A5DC /* PhotoListService.swift in Sources */,
+				BB360D852E0805BA0075A5DC /* PhotoListViewModel.swift in Sources */,
+				BB360D862E0805BA0075A5DC /* PhotoListView.swift in Sources */,
+				BB360D872E0805BA0075A5DC /* PhotoListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB360D952E0805C60075A5DC /* DependencyContainerTests.swift in Sources */,
+				BB360D962E0805C60075A5DC /* MockNavigator.swift in Sources */,
+				BB360D972E0805C60075A5DC /* NavigatorTests.swift in Sources */,
+				BB360D982E0805C60075A5DC /* MockPhotoListService.swift in Sources */,
+				BB360D992E0805C60075A5DC /* PhotoListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
