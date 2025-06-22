@@ -11,6 +11,7 @@ struct PhotoListView: View {
         static let vSpacing: CGFloat = 4
         static let verticalPadding: CGFloat = 16
         static let chevronPadding: CGFloat = 4
+        static let horizontalSpacing: CGFloat = 12
     }
     
     @ObservedObject var viewModel: PhotoListViewModel
@@ -59,9 +60,13 @@ struct PhotoListView: View {
     // MARK: - Photo Row View
     @ViewBuilder
     private func photoRow(photo: Photo) -> some View {
-        HStack {
+        HStack(spacing: Layout.horizontalSpacing) {
+            ThumbnailImageView(imageURL: photo.thumbnailUrl)
+            
             Text(photo.title)
                 .font(.subheadline)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
             
             Spacer()
             
