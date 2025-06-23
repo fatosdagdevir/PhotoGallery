@@ -32,7 +32,8 @@ struct PhotoDetailView: View {
                 ErrorView(viewModel: viewModel)
             }
         }
-        .task {
+        .onFirstAppear {
+            guard !viewModel.isPreview else { return }
             await viewModel.fetchPhotoDetail()
         }
     }

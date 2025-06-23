@@ -6,10 +6,16 @@ final class PhotoDetailViewModel: ObservableObject {
     private let photoID: Int
     
     @Published var viewState: PhotoDetailView.ViewState = .loading
+    let isPreview: Bool
     
-    init(photoID: Int, photoDetailService: PhotoDetailing) {
+    init(
+        photoID: Int,
+        photoDetailService: PhotoDetailing,
+        isPreview: Bool = false
+    ) {
         self.photoID = photoID
         self.photoDetailService = photoDetailService
+        self.isPreview = isPreview
     }
     
     func fetchPhotoDetail() async {
@@ -37,4 +43,4 @@ final class PhotoDetailViewModel: ObservableObject {
             )
         )
     }
-} 
+}

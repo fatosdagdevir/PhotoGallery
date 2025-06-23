@@ -47,6 +47,7 @@
 		BB360DBB2E085C100075A5DC /* PreviewProvider+ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBA2E085C100075A5DC /* PreviewProvider+ErrorViewModel.swift */; };
 		BB360DBD2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBC2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift */; };
 		BB360DBF2E094B400075A5DC /* PreviewProvider+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */; };
+		BB360DC22E094F240075A5DC /* View+onFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		BB360DBA2E085C100075A5DC /* PreviewProvider+ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+ErrorViewModel.swift"; sourceTree = "<group>"; };
 		BB360DBC2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+PhotoListViewModel.swift"; sourceTree = "<group>"; };
 		BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Photo.swift"; sourceTree = "<group>"; };
+		BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onFirstAppear.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,12 +238,12 @@
 			path = "Photo Detail";
 			sourceTree = "<group>";
 		};
-		BB360D652E0805BA0075A5DC /* Models */ = {
+		BB360D652E0805BA0075A5DC /* DOs */ = {
 			isa = PBXGroup;
 			children = (
 				BB360D642E0805BA0075A5DC /* Photo.swift */,
 			);
-			path = Models;
+			path = DOs;
 			sourceTree = "<group>";
 		};
 		BB360D672E0805BA0075A5DC /* Services */ = {
@@ -255,8 +257,8 @@
 		BB360D682E0805BA0075A5DC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				BB360D652E0805BA0075A5DC /* Models */,
 				BB360D672E0805BA0075A5DC /* Services */,
+				BB360D652E0805BA0075A5DC /* DOs */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -388,6 +390,7 @@
 		BB360D9A2E080DA30075A5DC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB360DC02E094EF60075A5DC /* Extensions */,
 				BB360DB52E085AC70075A5DC /* Preview Helpers */,
 				BB360D9F2E08135F0075A5DC /* Components */,
 			);
@@ -424,8 +427,8 @@
 		BB360DA62E0843F90075A5DC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				BB360DAE2E084AE80075A5DC /* Models */,
 				BB360DA52E0843F90075A5DC /* Services */,
+				BB360DAE2E084AE80075A5DC /* DOs */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -438,12 +441,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BB360DAE2E084AE80075A5DC /* Models */ = {
+		BB360DAE2E084AE80075A5DC /* DOs */ = {
 			isa = PBXGroup;
 			children = (
 				BB360DAF2E084AF00075A5DC /* PhotoDetail.swift */,
 			);
-			path = Models;
+			path = DOs;
 			sourceTree = "<group>";
 		};
 		BB360DB52E085AC70075A5DC /* Preview Helpers */ = {
@@ -456,6 +459,14 @@
 				BB360DBA2E085C100075A5DC /* PreviewProvider+ErrorViewModel.swift */,
 			);
 			path = "Preview Helpers";
+			sourceTree = "<group>";
+		};
+		BB360DC02E094EF60075A5DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,6 +581,7 @@
 				BB360D792E0805BA0075A5DC /* EndpointProtocol.swift in Sources */,
 				BB360DA42E0843F00075A5DC /* PhotoDetailViewModel.swift in Sources */,
 				BB360D7A2E0805BA0075A5DC /* HTTP.swift in Sources */,
+				BB360DC22E094F240075A5DC /* View+onFirstAppear.swift in Sources */,
 				BB360DB72E085AE30075A5DC /* PreviewProvider+PhotoDetailViewModel.swift in Sources */,
 				BB360D7B2E0805BA0075A5DC /* Network.swift in Sources */,
 				BB360DB92E085BB70075A5DC /* PreviewProvider+PhotoDetail.swift in Sources */,

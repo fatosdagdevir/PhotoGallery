@@ -8,13 +8,16 @@ final class PhotoListViewModel: ObservableObject {
     @Published var viewState: PhotoListView.ViewState = .loading
     
     var navigationTitle: String { "Photo Gallery" }
+    let isPreview: Bool
     
     init(
         navigator: Navigating,
-        photoListService: PhotoListing
+        photoListService: PhotoListing,
+        isPreview: Bool = false
     ) {
         self.navigator = navigator
         self.photoListService = photoListService
+        self.isPreview = isPreview
     }
     
     func fetchPhotoGallery() async {

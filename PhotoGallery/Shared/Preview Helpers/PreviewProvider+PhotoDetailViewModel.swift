@@ -6,7 +6,8 @@ extension PreviewProvider {
         let photoDetailService = PhotoDetailService(photoProvider: photoProvider)
         let viewModel = PhotoDetailViewModel(
             photoID: 1,
-            photoDetailService: photoDetailService
+            photoDetailService: photoDetailService,
+            isPreview: true
         )
         viewModel.viewState = state
         return viewModel
