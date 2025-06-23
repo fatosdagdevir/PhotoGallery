@@ -2,13 +2,9 @@
 
 A modern iOS photo gallery application built with SwiftUI and modular architecture.
 
-## Features
-
-- 📱 **Browse and view photos** from remote API
-- 🏗️ **Modular architecture** with local Swift packages
-- 🧪 **Comprehensive testing** with mocks and unit tests
-- 🎨 **SwiftUI interface** with modern design patterns
-- 🔌 **Protocol-oriented networking** for easy testing
+### Features
+- **Photo List**: Browse photos from API with thumbnail images
+- **Photo Detail**: View full-size photos with detailed information
 
 ## Requirements
 
@@ -46,11 +42,6 @@ PhotoGallery/
 │   └── Resources/
 └── PhotoGalleryTests/          ← App tests
 ```
-
-
-### Features
-- **Photo List**: Browse photos from API with thumbnail images
-- **Photo Detail**: View full-size photos with detailed information
 
 
 ### Current Architecture
