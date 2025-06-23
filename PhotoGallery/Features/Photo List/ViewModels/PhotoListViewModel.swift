@@ -33,10 +33,10 @@ final class PhotoListViewModel: ObservableObject {
     }
     
     func didSelect(photo: Photo) {
-        
+        navigator.navigate(to: .photoDetail(id: photo.id))
     }
     
-    //MARK: Error Handling
+    //MARK: Private Helpers
     private func handleError(_ error: Error) {
         viewState = .error(
             viewModel: ErrorViewModel(

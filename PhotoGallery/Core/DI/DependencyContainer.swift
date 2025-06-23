@@ -6,11 +6,13 @@ final class DependencyContainer {
     let network: Networking
     let photoProvider: PhotoProviding
     let photoListService: PhotoListing
+    let photoDetailService: PhotoDetailing
     
     init() {
         self.navigator = Navigator()
         self.network = Network()
         self.photoProvider = PhotoProvider(network: network)
         self.photoListService = PhotoListService(photoProvider: photoProvider)
+        self.photoDetailService = PhotoDetailService(photoProvider: photoProvider)
     }
 }

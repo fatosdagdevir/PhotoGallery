@@ -13,7 +13,8 @@ struct AppRootView: View {
         NavigationStack(path: $navigator.path) {
             PhotoListCoordinator(
                 navigator: navigator,
-                photoListService: container.photoListService
+                photoListService: container.photoListService,
+                photoDetailService: container.photoDetailService
             )
         }
     }

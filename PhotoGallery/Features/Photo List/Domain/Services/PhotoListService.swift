@@ -12,6 +12,6 @@ final class PhotoListService: PhotoListing {
     }
     
     func fetchPhotos() async throws -> [Photo] {
-        return try await photoProvider.fetchPhotoGallery()
+        try await photoProvider.fetchPhotoGallery()
     }
 }

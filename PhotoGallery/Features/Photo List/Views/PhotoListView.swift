@@ -99,11 +99,32 @@ struct PhotoListView: View {
     }
 }
 
-#Preview {
-    PhotoListView(
-        viewModel: .init(
-            navigator: Navigator(),
-            photoListService: PhotoListService()
-        )
-    )
+struct PhotoListView_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        // MARK: Ready
+        NavigationView {
+            PhotoListView(
+                viewModel: previewPhotoListViewModel(
+                    state: .ready(photos: previewPhotos)
+                )
+            )
+        }
+        
+        // MARK: Loading
+        NavigationView {
+            PhotoListView(
+                viewModel: previewPhotoListViewModel(state: .loading)
+            )
+        }
+        
+        // MARK: Error
+        NavigationView {
+            PhotoListView(
+                viewModel: previewPhotoListViewModel(
+                    state: .error(viewModel: previewErrorViewModel)
+                )
+            )
+        }
+    }
 }

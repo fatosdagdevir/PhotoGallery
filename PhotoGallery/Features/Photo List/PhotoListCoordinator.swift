@@ -1,18 +1,20 @@
 import SwiftUI
 
 struct PhotoListCoordinator: View {
-    enum PhotoListDestination: Hashable {
-        case photoDetail(id: Int)
-    }
-    
     @ObservedObject var navigator: Navigator
     let photoListService: PhotoListing
+    let photoDetailService: PhotoDetailing
     
     @StateObject private var viewModel: PhotoListViewModel
     
-    init(navigator: Navigator, photoListService: PhotoListing) {
+    init(
+        navigator: Navigator,
+        photoListService: PhotoListing,
+        photoDetailService: PhotoDetailing
+    ) {
         self.navigator = navigator
         self.photoListService = photoListService
+        self.photoDetailService = photoDetailService
         self._viewModel = StateObject(wrappedValue: PhotoListViewModel(
             navigator: navigator,
             photoListService: photoListService
@@ -21,12 +23,15 @@ struct PhotoListCoordinator: View {
     
     var body: some View {
         PhotoListView(viewModel: viewModel)
-            .navigationDestination(for: PhotoListDestination.self, destination: { destination in
+            .navigationDestination(for: NavigationDestination.self) { destination in
                 switch destination {
                 case let .photoDetail(id):
-                    PhotoDetailView()
+                    PhotoDetailCoordinator(
+                        photoID: id,
+                        photoDetailService: photoDetailService
+                    )
                 }
-            })
+            }
     }
 }
 

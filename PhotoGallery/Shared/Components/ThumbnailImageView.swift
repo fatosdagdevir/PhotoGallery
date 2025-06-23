@@ -16,20 +16,19 @@ struct ThumbnailImageView: View {
     }
     
     var body: some View {
-        AsyncImage(url: URL(string: imageURL)) { phase in
-            switch phase {
-            case .success(let image):
+        NetworkImageView(
+            url: URL(string: imageURL),
+            content: { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: size, height: size)
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-            case .empty, .failure:
-                placeholderView
-            @unknown default:
+            },
+            placeholder: {
                 placeholderView
             }
-        }
+        )
         .accessibilityHidden(true)
     }
     
@@ -47,7 +46,7 @@ struct ThumbnailImageView: View {
 
 #Preview {
     VStack(spacing: 20) {
-        ThumbnailImageView(imageURL: "https://example.com/valid-image.jpg")
+        ThumbnailImageView(imageURL: "https://via.placeholder.com/150/92c952")
         ThumbnailImageView(imageURL: "invalid-url", size: 80, cornerRadius: 12)
         ThumbnailImageView(imageURL: "", size: 40, cornerRadius: 4)
     }

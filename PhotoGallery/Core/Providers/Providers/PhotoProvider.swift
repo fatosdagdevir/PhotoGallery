@@ -2,6 +2,7 @@ import Foundation
 
 protocol PhotoProviding {
     func fetchPhotoGallery() async throws -> [Photo]
+    func fetchPhotoDetail(with id: Int) async throws -> PhotoDetail
 }
 
 final class PhotoProvider: PhotoProviding {
@@ -16,8 +17,16 @@ final class PhotoProvider: PhotoProviding {
         let response = try await network.send(request: request)
         return response.map { $0.mapped }
     }
+    
+    func fetchPhotoDetail(with id: Int) async throws -> PhotoDetail {
+        let endpoint = PhotoDetailEndpoint(id: id)
+        let request = PhotoDetailRequest(endpoint: endpoint)
+        let response = try await network.send(request: request)
+        return response.mapped
+    }
 }
 
+// MARK: - Photo Gallery
 private struct PhotoGalleryEndpoint: EndpointProtocol {
     let base = AppConstants.API.baseURL
     let path = "photos"
@@ -25,6 +34,22 @@ private struct PhotoGalleryEndpoint: EndpointProtocol {
 
 private struct PhotoGalleryRequest: RequestProtocol {
     typealias Response = [PhotoDTO]
+    let endpoint: EndpointProtocol
+    let method: HTTP.Method = .get
+}
+
+// MARK: - Photo Detail
+private struct PhotoDetailEndpoint: EndpointProtocol {
+    let base = AppConstants.API.baseURL
+    let path: String
+    
+    init(id: Int) {
+        self.path = "photos/\(id)"
+    }
+}
+
+private struct PhotoDetailRequest: RequestProtocol {
+    typealias Response = PhotoDetailDTO
     let endpoint: EndpointProtocol
     let method: HTTP.Method = .get
 }
