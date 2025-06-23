@@ -10,8 +10,6 @@ struct PhotoListView: View {
     private enum Layout {
         static let vSpacing: CGFloat = 4
         static let verticalPadding: CGFloat = 16
-        static let chevronPadding: CGFloat = 4
-        static let horizontalSpacing: CGFloat = 12
     }
     
     @ObservedObject var viewModel: PhotoListViewModel
@@ -43,7 +41,9 @@ struct PhotoListView: View {
         ScrollView {
             LazyVStack(spacing: Layout.vSpacing) {
                 ForEach(photos, id: \.id) { photo in
-                    photoRow(photo: photo)
+                    PhotoListRowView(photo: photo) {
+                        viewModel.didSelect(photo: photo)
+                    }
                 }
             }
             .padding(.vertical, Layout.verticalPadding)
@@ -56,47 +56,6 @@ struct PhotoListView: View {
             }
         }
         .accessibilityHint("Double tap to refresh the photo list")
-    }
-    
-    // MARK: - Photo Row View
-    @ViewBuilder
-    private func photoRow(photo: Photo) -> some View {
-        HStack(spacing: Layout.horizontalSpacing) {
-            ThumbnailImageView(imageURL: photo.thumbnailUrl)
-            
-            Text(photo.title)
-                .font(.subheadline)
-                .lineLimit(2)
-                .multilineTextAlignment(.leading)
-            
-            Spacer()
-            
-            chevronIcon
-        }
-        .padding()
-        .background(
-            Color.clear
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    viewModel.didSelect(photo: photo)
-                }
-        )
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(photo.title)
-        .accessibilityHint("Double tap to view photo details")
-        .accessibilityAddTraits(.isButton)
-        
-        Divider()
-            .foregroundColor(.gray)
-            .accessibilityHidden(true)
-    }
-    
-    @ViewBuilder
-    private var chevronIcon: some View {
-        Image(systemName: "chevron.right")
-            .foregroundColor(.gray)
-            .padding(.leading, Layout.chevronPadding)
-            .accessibilityHidden(true)
     }
 }
 

@@ -48,6 +48,7 @@
 		BB360DBD2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBC2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift */; };
 		BB360DBF2E094B400075A5DC /* PreviewProvider+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */; };
 		BB360DC22E094F240075A5DC /* View+onFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */; };
+		BB360DC42E0964E00075A5DC /* PhotoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC32E0964E00075A5DC /* PhotoListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		BB360DBC2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+PhotoListViewModel.swift"; sourceTree = "<group>"; };
 		BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Photo.swift"; sourceTree = "<group>"; };
 		BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onFirstAppear.swift"; sourceTree = "<group>"; };
+		BB360DC32E0964E00075A5DC /* PhotoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				BB360D6B2E0805BA0075A5DC /* PhotoListView.swift */,
+				BB360DC32E0964E00075A5DC /* PhotoListRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				BB360D7E2E0805BA0075A5DC /* URL+Endpoint.swift in Sources */,
 				BB360DBD2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift in Sources */,
 				BB360D7F2E0805BA0075A5DC /* URLRequest.swift in Sources */,
+				BB360DC42E0964E00075A5DC /* PhotoListRowView.swift in Sources */,
 				BB360DA12E08165B0075A5DC /* ThumbnailImageView.swift in Sources */,
 				BB360D802E0805BA0075A5DC /* PhotoDTO.swift in Sources */,
 				BB360DAB2E0845690075A5DC /* PhotoDetailCoordinator.swift in Sources */,
