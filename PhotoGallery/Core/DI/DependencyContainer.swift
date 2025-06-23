@@ -1,4 +1,5 @@
 import Foundation
+import Networking
 
 @MainActor
 final class DependencyContainer {
@@ -10,7 +11,7 @@ final class DependencyContainer {
     
     init() {
         self.navigator = Navigator()
-        self.network = Network()
+        self.network = Network(timeoutInterval: AppConstants.API.timeout)
         self.photoProvider = PhotoProvider(network: network)
         self.photoListService = PhotoListService(photoProvider: photoProvider)
         self.photoDetailService = PhotoDetailService(photoProvider: photoProvider)

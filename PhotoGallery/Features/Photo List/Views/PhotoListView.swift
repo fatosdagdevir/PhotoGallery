@@ -70,6 +70,7 @@ struct PhotoListView_Previews: PreviewProvider {
                 )
             )
         }
+        .previewDisplayName("Ready")
         
         // MARK: Loading
         NavigationView {
@@ -77,6 +78,7 @@ struct PhotoListView_Previews: PreviewProvider {
                 viewModel: previewPhotoListViewModel(state: .loading)
             )
         }
+        .previewDisplayName("Loading")
         
         // MARK: Error
         NavigationView {
@@ -86,5 +88,6 @@ struct PhotoListView_Previews: PreviewProvider {
                 )
             )
         }
+        .previewDisplayName("Error")
     }
 }

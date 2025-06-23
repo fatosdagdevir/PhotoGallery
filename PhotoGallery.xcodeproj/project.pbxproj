@@ -12,13 +12,6 @@
 		BB360D752E0805BA0075A5DC /* PhotoGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D4C2E0805BA0075A5DC /* PhotoGalleryApp.swift */; };
 		BB360D762E0805BA0075A5DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D4E2E0805BA0075A5DC /* AppConstants.swift */; };
 		BB360D772E0805BA0075A5DC /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D502E0805BA0075A5DC /* DependencyContainer.swift */; };
-		BB360D792E0805BA0075A5DC /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */; };
-		BB360D7A2E0805BA0075A5DC /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D552E0805BA0075A5DC /* HTTP.swift */; };
-		BB360D7B2E0805BA0075A5DC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D562E0805BA0075A5DC /* Network.swift */; };
-		BB360D7C2E0805BA0075A5DC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D572E0805BA0075A5DC /* NetworkError.swift */; };
-		BB360D7D2E0805BA0075A5DC /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D582E0805BA0075A5DC /* RequestProtocol.swift */; };
-		BB360D7E2E0805BA0075A5DC /* URL+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */; };
-		BB360D7F2E0805BA0075A5DC /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5A2E0805BA0075A5DC /* URLRequest.swift */; };
 		BB360D802E0805BA0075A5DC /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5C2E0805BA0075A5DC /* PhotoDTO.swift */; };
 		BB360D812E0805BA0075A5DC /* PhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D5E2E0805BA0075A5DC /* PhotoProvider.swift */; };
 		BB360D822E0805BA0075A5DC /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360D622E0805BA0075A5DC /* PhotoDetailView.swift */; };
@@ -60,6 +53,8 @@
 		BB360DE02E09CE050075A5DC /* photo_gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = BB360DDD2E09CE050075A5DC /* photo_gallery.json */; };
 		BB360DE12E09CE050075A5DC /* empty_gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = BB360DDB2E09CE050075A5DC /* empty_gallery.json */; };
 		BB360DE32E09D1000075A5DC /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DE22E09D1000075A5DC /* MockNetwork.swift */; };
+		BB360DE62E09D89A0075A5DC /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = BB360DE52E09D89A0075A5DC /* Networking */; };
+		BB360DE92E09E1420075A5DC /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = BB360DE82E09E1420075A5DC /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,13 +74,6 @@
 		BB360D4C2E0805BA0075A5DC /* PhotoGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryApp.swift; sourceTree = "<group>"; };
 		BB360D4E2E0805BA0075A5DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		BB360D502E0805BA0075A5DC /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
-		BB360D552E0805BA0075A5DC /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
-		BB360D562E0805BA0075A5DC /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		BB360D572E0805BA0075A5DC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		BB360D582E0805BA0075A5DC /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
-		BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Endpoint.swift"; sourceTree = "<group>"; };
-		BB360D5A2E0805BA0075A5DC /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		BB360D5C2E0805BA0075A5DC /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		BB360D5E2E0805BA0075A5DC /* PhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProvider.swift; sourceTree = "<group>"; };
 		BB360D622E0805BA0075A5DC /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
@@ -135,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB360DE92E09E1420075A5DC /* Networking in Frameworks */,
+				BB360DE62E09D89A0075A5DC /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,20 +189,6 @@
 			path = Navigating;
 			sourceTree = "<group>";
 		};
-		BB360D5B2E0805BA0075A5DC /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				BB360D542E0805BA0075A5DC /* EndpointProtocol.swift */,
-				BB360D552E0805BA0075A5DC /* HTTP.swift */,
-				BB360D562E0805BA0075A5DC /* Network.swift */,
-				BB360D572E0805BA0075A5DC /* NetworkError.swift */,
-				BB360D582E0805BA0075A5DC /* RequestProtocol.swift */,
-				BB360D592E0805BA0075A5DC /* URL+Endpoint.swift */,
-				BB360D5A2E0805BA0075A5DC /* URLRequest.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		BB360D5D2E0805BA0075A5DC /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +221,6 @@
 				BB360D4F2E0805BA0075A5DC /* Constants */,
 				BB360D512E0805BA0075A5DC /* DI */,
 				BB360D532E0805BA0075A5DC /* Navigating */,
-				BB360D5B2E0805BA0075A5DC /* Networking */,
 				BB360D602E0805BA0075A5DC /* Providers */,
 			);
 			path = Core;
@@ -570,6 +545,8 @@
 			);
 			name = PhotoGallery;
 			packageProductDependencies = (
+				BB360DE52E09D89A0075A5DC /* Networking */,
+				BB360DE82E09E1420075A5DC /* Networking */,
 			);
 			productName = PhotoGallery;
 			productReference = BB360C552E0497DE0075A5DC /* PhotoGallery.app */;
@@ -623,6 +600,9 @@
 			);
 			mainGroup = BB360C4C2E0497DE0075A5DC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BB360DE72E09E1420075A5DC /* XCLocalSwiftPackageReference "../Networking" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB360C562E0497DE0075A5DC /* Products */;
 			projectDirPath = "";
@@ -665,19 +645,12 @@
 				BB360D762E0805BA0075A5DC /* AppConstants.swift in Sources */,
 				BB360D772E0805BA0075A5DC /* DependencyContainer.swift in Sources */,
 				BB360DB02E084AF00075A5DC /* PhotoDetail.swift in Sources */,
-				BB360D792E0805BA0075A5DC /* EndpointProtocol.swift in Sources */,
 				BB360DA42E0843F00075A5DC /* PhotoDetailViewModel.swift in Sources */,
-				BB360D7A2E0805BA0075A5DC /* HTTP.swift in Sources */,
 				BB360DC22E094F240075A5DC /* View+onFirstAppear.swift in Sources */,
 				BB360DB72E085AE30075A5DC /* PreviewProvider+PhotoDetailViewModel.swift in Sources */,
-				BB360D7B2E0805BA0075A5DC /* Network.swift in Sources */,
 				BB360DB92E085BB70075A5DC /* PreviewProvider+PhotoDetail.swift in Sources */,
-				BB360D7C2E0805BA0075A5DC /* NetworkError.swift in Sources */,
 				BB360D9C2E080DB20075A5DC /* ErrorViewModel.swift in Sources */,
-				BB360D7D2E0805BA0075A5DC /* RequestProtocol.swift in Sources */,
-				BB360D7E2E0805BA0075A5DC /* URL+Endpoint.swift in Sources */,
 				BB360DBD2E094AA80075A5DC /* PreviewProvider+PhotoListViewModel.swift in Sources */,
-				BB360D7F2E0805BA0075A5DC /* URLRequest.swift in Sources */,
 				BB360DC42E0964E00075A5DC /* PhotoListRowView.swift in Sources */,
 				BB360DA12E08165B0075A5DC /* ThumbnailImageView.swift in Sources */,
 				BB360D802E0805BA0075A5DC /* PhotoDTO.swift in Sources */,
@@ -974,6 +947,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		BB360DE72E09E1420075A5DC /* XCLocalSwiftPackageReference "Packages/Networking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Networking;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB360DE52E09D89A0075A5DC /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB360DE72E09E1420075A5DC /* XCLocalSwiftPackageReference "Packages/Networking" */;
+			productName = Networking;
+		};
+		BB360DE82E09E1420075A5DC /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB360DE72E09E1420075A5DC /* XCLocalSwiftPackageReference "Packages/Networking" */;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB360C4D2E0497DE0075A5DC /* Project object */;
 }

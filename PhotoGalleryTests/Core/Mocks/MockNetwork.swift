@@ -1,4 +1,5 @@
 import Foundation
+import Networking
 @testable import PhotoGallery
 
 final class MockNetwork: Networking {

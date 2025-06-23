@@ -34,20 +34,24 @@ struct ErrorView: View {
     }
 }
 
-#Preview("Generic Error") {
-    ErrorView(
-        viewModel: ErrorViewModel(
-            error: NetworkError.unknown,
-            action: { }
-        )
-    )
-}
+struct ErrorView_Previews: PreviewProvider {
+    private struct PreviewError: Error {}
 
-#Preview("Offline Error") {
-    ErrorView(
-        viewModel: ErrorViewModel(
-            error: NetworkError.offline,
-            action: { }
+    static var previews: some View {
+        ErrorView(
+            viewModel: ErrorViewModel(
+                error: PreviewError(),
+                action: { }
+            )
         )
-    )
+        .previewDisplayName("Generic")
+
+        ErrorView(
+            viewModel: ErrorViewModel(
+                error: URLError(.notConnectedToInternet),
+                action: { }
+            )
+        )
+        .previewDisplayName("Offline")
+    }
 }

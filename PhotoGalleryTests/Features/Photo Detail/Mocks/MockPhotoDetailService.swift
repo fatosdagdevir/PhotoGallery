@@ -1,5 +1,6 @@
-@testable import PhotoGallery
 import Foundation
+import Networking
+@testable import PhotoGallery
 
 // MARK: - Mock PhotoDetailService
 final class MockPhotoDetailService: PhotoDetailing {

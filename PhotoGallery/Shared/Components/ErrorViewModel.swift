@@ -39,7 +39,11 @@ final class ErrorViewModel: ObservableObject {
     ) {
         self.error = error
         self.action = action
-        self.type = (error as? NetworkError)?.isOfflineError == true ? .offline : .generic
+        if error.isOfflineError {
+            self.type = .offline
+        } else {
+            self.type = .generic
+        }
     }
 }
 
@@ -51,3 +55,20 @@ extension ErrorViewModel: Equatable {
         lhs.buttonTitle == rhs.buttonTitle
     }
 }
+
+extension Error {
+    var isOfflineError: Bool {
+        guard let urlError = self as? URLError else { return false }
+
+        let offlineCodes: [URLError.Code] = [
+            .notConnectedToInternet,
+            .networkConnectionLost,
+            .dataNotAllowed,
+            .internationalRoamingOff,
+            .timedOut
+        ]
+
+        return offlineCodes.contains(urlError.code)
+    }
+}
+

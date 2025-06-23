@@ -1,4 +1,5 @@
 import XCTest
+import Networking
 @testable import PhotoGallery
 
 @MainActor

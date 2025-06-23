@@ -1,4 +1,5 @@
 import XCTest
+import Networking
 @testable import PhotoGallery
 
 @MainActor
@@ -23,7 +24,7 @@ final class DependencyContainerTests: XCTestCase {
     }
     
     func test_network_isCorrectType() {
-        XCTAssertTrue(container.network is Network)
+        XCTAssertTrue(container.network is Networking)
     }
     
     func test_photoProvider_isCorrectType() {

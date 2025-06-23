@@ -26,21 +26,22 @@ public extension Networking {
     }
 }
 
-struct Network: Networking {
+@available(macOS 12.0, iOS 16.0, *)
+public struct Network: Networking {
     enum InternalError: Error {
         case invalidURL
     }
     
-    let encoder: JSONEncoder
-    let decoder: JSONDecoder
+    public let encoder: JSONEncoder
+    public let decoder: JSONDecoder
     let session: URLSession
     private let timeoutInterval: TimeInterval
     
-    init(
+    public init(
         session: URLSession = URLSession.shared,
         encoder: JSONEncoder = JSONEncoder(),
         decoder: JSONDecoder = JSONDecoder(),
-        timeoutInterval: TimeInterval = AppConstants.API.timeout
+        timeoutInterval: TimeInterval = 20.0
     ) {
         self.session = session
         self.encoder = encoder
@@ -48,8 +49,8 @@ struct Network: Networking {
         self.timeoutInterval = timeoutInterval
     }
     
-    func data(for request: some RequestProtocol) async throws -> (Data, URLResponse) {
-        guard var urlRequest = try? URLRequest(
+    public func data(for request: some RequestProtocol) async throws -> (Data, URLResponse) {
+        guard let urlRequest = URLRequest(
             endpoint: request.endpoint,
             method: request.method,
             timeoutInterval: timeoutInterval,
@@ -58,16 +59,18 @@ struct Network: Networking {
             throw NetworkError.invalidURL
         }
         
+        var finalRequest = urlRequest
+        
         if let body = request.body {
             do {
-                urlRequest.httpBody = try encoder.encode(body)
+                finalRequest.httpBody = try encoder.encode(body)
             } catch {
                 throw NetworkError.unknown
             }
         }
         
         do {
-            let (data, response) = try await session.data(for: urlRequest)
+            let (data, response) = try await session.data(for: finalRequest)
             
             if let error = NetworkError(response: response) {
                 throw error
@@ -78,4 +81,8 @@ struct Network: Networking {
             throw NetworkError.handle(error)
         }
     }
+}
+
+public struct EmptyResponse: Codable {
+    public init() {}
 }

@@ -1,4 +1,5 @@
 import Foundation
+import Networking
 
 protocol PhotoProviding {
     func fetchPhotoGallery() async throws -> [Photo]
@@ -28,28 +29,28 @@ final class PhotoProvider: PhotoProviding {
 
 // MARK: - Photo Gallery
 private struct PhotoGalleryEndpoint: EndpointProtocol {
-    let base = AppConstants.API.baseURL
-    let path = "photos"
+    let host = AppConstants.API.baseURL
+    let path = "/photos"
 }
 
 private struct PhotoGalleryRequest: RequestProtocol {
     typealias Response = [PhotoDTO]
-    let endpoint: EndpointProtocol
-    let method: HTTP.Method = .get
+    let endpoint: any EndpointProtocol
+    let method: HTTP.Method = .GET
 }
 
 // MARK: - Photo Detail
 private struct PhotoDetailEndpoint: EndpointProtocol {
-    let base = AppConstants.API.baseURL
+    let host = AppConstants.API.baseURL
     let path: String
     
     init(id: Int) {
-        self.path = "photos/\(id)"
+        self.path = "/photos/\(id)"
     }
 }
 
 private struct PhotoDetailRequest: RequestProtocol {
     typealias Response = PhotoDetailDTO
-    let endpoint: EndpointProtocol
-    let method: HTTP.Method = .get
+    let endpoint: any EndpointProtocol
+    let method: HTTP.Method = .GET
 }

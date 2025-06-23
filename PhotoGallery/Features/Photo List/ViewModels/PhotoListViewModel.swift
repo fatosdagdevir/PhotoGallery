@@ -43,7 +43,7 @@ final class PhotoListViewModel: ObservableObject {
     private func handleError(_ error: Error) {
         viewState = .error(
             viewModel: ErrorViewModel(
-                error: NetworkError.handle(error),
+                error: error,
                 action: {  [weak self] in
                     await self?.refresh()
                 }

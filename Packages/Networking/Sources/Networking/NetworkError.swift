@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkError: LocalizedError {
+public enum NetworkError: LocalizedError {
     case invalidStatus(Int)
     case serverError(Int)
     case offline
@@ -8,7 +8,7 @@ enum NetworkError: LocalizedError {
     case invalidURL
     case unknown
     
-    var statusCode: Int {
+    public var statusCode: Int {
         switch self {
         case .invalidStatus(let code), .serverError(let code):
             return code
@@ -25,7 +25,7 @@ enum NetworkError: LocalizedError {
         .timedOut
     ]
     
-    var isOfflineError: Bool {
+    public var isOfflineError: Bool {
         switch self {
         case .offline:
             return true
@@ -36,7 +36,7 @@ enum NetworkError: LocalizedError {
         }
     }
     
-    init?(error: Error) {
+    public init?(error: Error) {
         if let urlError = error as? URLError,
            Self.offlineCodes.contains(urlError.code) {
             self = .offline
@@ -47,7 +47,7 @@ enum NetworkError: LocalizedError {
         }
     }
     
-    init?(response: URLResponse) {
+    public init?(response: URLResponse) {
         guard let httpResponse = response as? HTTPURLResponse else {
             return nil
         }
@@ -63,7 +63,7 @@ enum NetworkError: LocalizedError {
     }
 }
 
-extension NetworkError {
+public extension NetworkError {
     static func handle(_ error: Error) -> NetworkError {
         if let networkError = error as? NetworkError {
             return networkError

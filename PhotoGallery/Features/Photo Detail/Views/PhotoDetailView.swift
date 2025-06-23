@@ -102,6 +102,7 @@ struct MovieDetailsView_Previews: PreviewProvider {
                 )
             )
         }
+        .previewDisplayName("Ready")
         
         // MARK: Loading
         NavigationView {
@@ -109,6 +110,7 @@ struct MovieDetailsView_Previews: PreviewProvider {
                 viewModel: previewPhotoDetailViewModel(state: .loading)
             )
         }
+        .previewDisplayName("Loading")
         
         // MARK: Error
         NavigationView {
@@ -118,5 +120,6 @@ struct MovieDetailsView_Previews: PreviewProvider {
                 )
             )
         }
+        .previewDisplayName("Error")
     }
 }
