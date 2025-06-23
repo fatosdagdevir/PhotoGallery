@@ -3,7 +3,7 @@ import XCTest
 
 @MainActor
 final class PhotoListViewModelTests: XCTestCase {
-    private var viewModel: PhotoListViewModel!
+    private var sut: PhotoListViewModel!
     private var mockPhotoListService: MockPhotoListService!
     private var mockNavigator: MockNavigator!
     
@@ -11,27 +11,42 @@ final class PhotoListViewModelTests: XCTestCase {
         super.setUp()
         mockPhotoListService = MockPhotoListService()
         mockNavigator = MockNavigator()
-        viewModel = PhotoListViewModel(
+        sut = PhotoListViewModel(
             navigator: mockNavigator,
             photoListService: mockPhotoListService
         )
     }
     
     override func tearDown() {
-        viewModel = nil
+        sut = nil
         mockPhotoListService = nil
         mockNavigator = nil
         super.tearDown()
     }
     
-    func test_init_withValidDependencies_createsViewModel() {
+    func test_init_createsViewModel() {
         // Then
-        XCTAssertNotNil(viewModel)
+        XCTAssertNotNil(sut)
+        XCTAssertEqual(sut.viewState, .loading)
+        XCTAssertFalse(sut.isPreview)
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 0)
         XCTAssertEqual(mockNavigator.navigatedToDestinations.count, 0)
+        XCTAssertEqual(sut.navigationTitle, "Photo Gallery")
     }
     
-    func test_fetchPhotoGallery_onSuccess_callsPhotoListService() async {
+    func test_init_withPreviewFlag_setsPreviewFlag() {
+        // Given
+        let previewViewModel = PhotoListViewModel(
+            navigator: mockNavigator,
+            photoListService: mockPhotoListService,
+            isPreview: true
+        )
+        
+        // Then
+        XCTAssertTrue(previewViewModel.isPreview)
+    }
+    
+    func test_fetchPhotoGallery_onSuccess_updatesViewStateToReady() async {
         // Given
         let expectedPhotos = [
             Photo(id: 1, title: "Photo 1", url: "photo1.com", thumbnailUrl: "thumb1.com"),
@@ -40,69 +55,128 @@ final class PhotoListViewModelTests: XCTestCase {
         mockPhotoListService.fetchPhotosResult = .success(expectedPhotos)
         
         // When
-        await viewModel.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
         
         // Then
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        
+        guard case .ready(let photos) = sut.viewState else {
+            XCTFail("Expected .ready state")
+            return
+        }
+        
+        XCTAssertEqual(photos.count, 2)
+        XCTAssertEqual(photos[0].id, 1)
+        XCTAssertEqual(photos[0].title, "Photo 1")
+        XCTAssertEqual(photos[1].id, 2)
+        XCTAssertEqual(photos[1].title, "Photo 2")
     }
     
-    func test_fetchPhotoGallery_onFailure_handlesError() async {
+    func test_fetchPhotoGallery_onFailure_updatesViewStateToError() async {
         // Given
         let expectedError = NetworkError.offline
         mockPhotoListService.fetchPhotosResult = .failure(expectedError)
         
         // When
-        await viewModel.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
         
         // Then
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        
+        guard case .error(let errorViewModel) = sut.viewState else {
+            XCTFail("Expected .error state")
+            return
+        }
+        
+        XCTAssertEqual(errorViewModel.headerText, "You are offline!")
+        XCTAssertEqual(errorViewModel.descriptionText, "Please check your internet connection and try again.")
     }
     
-    func test_fetchPhotoGallery_onEmptyResponse_handlesEmptyArray() async {
+    func test_fetchPhotoGallery_onEmptyResponse_updatesViewStateToReady() async {
         // Given
         mockPhotoListService.fetchPhotosResult = .success([])
         
         // When
-        await viewModel.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
         
         // Then
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        
+        guard case .ready(let photos) = sut.viewState else {
+            XCTFail("Expected .ready state")
+            return
+        }
+        
+        XCTAssertTrue(photos.isEmpty)
     }
     
-    func test_fetchPhotoGallery_onDecodingError_handlesDecodingError() async {
+    func test_refresh_setsLoadingStateAndFetchesData() async {
         // Given
-        let decodingError = NetworkError.decodingError
-        mockPhotoListService.fetchPhotosResult = .failure(decodingError)
+        let expectedPhotos = [Photo(id: 1, title: "Photo 1", url: "photo1.com", thumbnailUrl: "thumb1.com")]
+        mockPhotoListService.fetchPhotosResult = .success(expectedPhotos)
+        
+        // Initial Error State
+        sut.viewState = .error(viewModel: ErrorViewModel(error: NetworkError.offline, action: {}))
         
         // When
-        await viewModel.fetchPhotoGallery()
+        await sut.refresh()
         
         // Then
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        
+        guard case .ready(let photos) = sut.viewState else {
+            XCTFail("Expected .ready state")
+            return
+        }
+        
+        XCTAssertEqual(photos.count, 1)
+        XCTAssertEqual(photos[0].id, 1)
     }
     
-    func test_fetchPhotoGallery_onServerError_handlesServerError() async {
+    func test_didSelect_photo_navigatesToPhotoDetail() {
         // Given
-        let serverError = NetworkError.serverError(500)
-        mockPhotoListService.fetchPhotosResult = .failure(serverError)
+        let photo = Photo(id: 42, title: "Test Photo", url: "test.com", thumbnailUrl: "thumb.com")
         
         // When
-        await viewModel.fetchPhotoGallery()
+        sut.didSelect(photo: photo)
         
         // Then
-        XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        XCTAssertEqual(mockNavigator.navigatedToDestinations.count, 1)
+        
+        guard case .photoDetail(let photoID) = mockNavigator.navigatedToDestinations.first else {
+            XCTFail("Expected photoDetail navigation")
+            return
+        }
+        
+        XCTAssertEqual(photoID, 42)
     }
     
-    func test_fetchPhotoGallery_onNetworkTimeout_handlesTimeout() async {
+    func test_errorViewModel_hasRefreshAction() async {
         // Given
-        let timeoutError = URLError(.timedOut)
-        mockPhotoListService.fetchPhotosResult = .failure(timeoutError)
+        mockPhotoListService.fetchPhotosResult = .failure(NetworkError.offline)
         
-        // When
-        await viewModel.fetchPhotoGallery()
+        // When - First call fails
+        await sut.fetchPhotoGallery()
         
-        // Then
-        XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
+        // Then - Verify error state
+        guard case .error(let errorViewModel) = sut.viewState else {
+            XCTFail("Expected error state")
+            return
+        }
+        
+        // When - Retry with success
+        mockPhotoListService.fetchPhotosResult = .success([Photo(id: 1, title: "Test", url: "test.com", thumbnailUrl: "thumb.com")])
+        await errorViewModel.action()
+        
+        // Then - Verify second call and state change
+        XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 2)
+        
+        guard case .ready(let photos) = sut.viewState else {
+            XCTFail("Expected .ready state after retry")
+            return
+        }
+        
+        XCTAssertEqual(photos.count, 1)
     }
     
     func test_fetchPhotoGallery_handlesAsyncOperation() async {
@@ -112,7 +186,7 @@ final class PhotoListViewModelTests: XCTestCase {
         
         // When
         Task {
-            await viewModel.fetchPhotoGallery()
+            await sut.fetchPhotoGallery()
             expectation.fulfill()
         }
         
@@ -126,61 +200,12 @@ final class PhotoListViewModelTests: XCTestCase {
         mockPhotoListService.fetchPhotosResult = .success([])
         
         // When
-        await viewModel.fetchPhotoGallery()
-        await viewModel.fetchPhotoGallery()
-        await viewModel.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
+        await sut.fetchPhotoGallery()
         
         // Then
         XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 3)
-    }
-    
-    func test_fetchPhotoGallery_usesInjectedPhotoListService() async {
-        // Given
-        let customService = MockPhotoListService()
-        let customViewModel = PhotoListViewModel(
-            navigator: mockNavigator,
-            photoListService: customService
-        )
-        customService.fetchPhotosResult = .success([])
-        
-        // When
-        await customViewModel.fetchPhotoGallery()
-        
-        // Then
-        XCTAssertEqual(customService.fetchPhotosCallCount, 1)
-        XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 0)
-    }
-    
-    func test_fetchPhotoGallery_usesInjectedNavigator() {
-        // Given
-        let customNavigator = MockNavigator()
-        let customViewModel = PhotoListViewModel(
-            navigator: customNavigator,
-            photoListService: mockPhotoListService
-        )
-        
-        // Then
-        XCTAssertNotNil(customViewModel)
-        XCTAssertEqual(customNavigator.navigatedToDestinations.count, 0)
-    }
-    
-    func test_fetchPhotoGallery_onLargePhotoArray_handlesLargeDataSet() async {
-        // Given
-        let largePhotoArray = (1...1000).map { index in
-            Photo(
-                id: index,
-                title: "Photo \(index)",
-                url: "photo\(index).com",
-                thumbnailUrl: "thumb\(index).com"
-            )
-        }
-        mockPhotoListService.fetchPhotosResult = .success(largePhotoArray)
-        
-        // When
-        await viewModel.fetchPhotoGallery()
-        
-        // Then
-        XCTAssertEqual(mockPhotoListService.fetchPhotosCallCount, 1)
     }
     
     func test_fetchPhotoGallery_onConcurrentCalls_handlesConcurrency() async {
@@ -191,7 +216,7 @@ final class PhotoListViewModelTests: XCTestCase {
         await withTaskGroup(of: Void.self) { group in
             for _ in 0..<5 {
                 group.addTask {
-                    await self.viewModel.fetchPhotoGallery()
+                    await self.sut.fetchPhotoGallery()
                 }
             }
         }

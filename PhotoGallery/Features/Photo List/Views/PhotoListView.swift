@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PhotoListView: View {
-    enum ViewState {
+    enum ViewState: Equatable {
         case loading
         case ready(photos: [Photo])
         case error(viewModel: ErrorViewModel)
