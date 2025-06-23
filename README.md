@@ -50,22 +50,6 @@ PhotoGallery/
 - **Protocol-Oriented Programming**: Use of protocols for dependency injection and testability.
 - **Dependency Injection**: Container pattern for managing dependencies.
 
-### Future Improvements & Roadmap
-
-
-#### 🧪 **Testing Enhancements**
-- **Networking Package Tests**: Add comprehensive unit tests for all networking components
-- **Integration Tests**: Test real API endpoints with mock servers
-- **UI Tests**: Add comprehensive UI testing for critical user flows
-- **Snapshot Tests**: Ensure UI consistency across different devices and iOS versions
-
-#### 🏗️ **Architecture Improvements**
-- **Result Types**: Standardize error handling with Result<Success, Failure>
-- **Async Sequences**: Implement reactive data streams for real-time updates
-- **Offline Support**: Add local caching and offline-first architecture
-- **Image Caching**: Add caching for images so they don't reload every time. Use NSCache for quick access and save to disk for when the app restarts
-- **Performance**: Load images only when needed and preload some images ahead of time
-
 
 ### ✅ **Two Things Solved Well**
 
