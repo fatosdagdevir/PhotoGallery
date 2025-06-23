@@ -1,6 +1,6 @@
 import Foundation
 
-struct PhotoDetail: Identifiable {
+struct PhotoDetail: Identifiable, Equatable {
     let id: Int
     let title: String
     let url: String

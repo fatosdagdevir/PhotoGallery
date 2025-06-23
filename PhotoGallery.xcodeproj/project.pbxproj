@@ -49,6 +49,17 @@
 		BB360DBF2E094B400075A5DC /* PreviewProvider+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */; };
 		BB360DC22E094F240075A5DC /* View+onFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */; };
 		BB360DC42E0964E00075A5DC /* PhotoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC32E0964E00075A5DC /* PhotoListRowView.swift */; };
+		BB360DCA2E0970BF0075A5DC /* PhotoDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC82E0970BF0075A5DC /* PhotoDetailViewModelTests.swift */; };
+		BB360DCB2E0970BF0075A5DC /* PhotoDetailServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DC72E0970BF0075A5DC /* PhotoDetailServiceTests.swift */; };
+		BB360DCE2E0979410075A5DC /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DCD2E0979410075A5DC /* PhotoDetail.swift */; };
+		BB360DD02E0979FE0075A5DC /* MockPhotoDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DCF2E0979FE0075A5DC /* MockPhotoDetailService.swift */; };
+		BB360DD22E097A500075A5DC /* MockPhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DD12E097A500075A5DC /* MockPhotoProvider.swift */; };
+		BB360DD72E09CA6C0075A5DC /* ErrorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DD42E09CA6C0075A5DC /* ErrorViewModelTests.swift */; };
+		BB360DDA2E09CC750075A5DC /* PhotoProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DD82E09CC750075A5DC /* PhotoProviderTests.swift */; };
+		BB360DDF2E09CE050075A5DC /* photo_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = BB360DDC2E09CE050075A5DC /* photo_detail.json */; };
+		BB360DE02E09CE050075A5DC /* photo_gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = BB360DDD2E09CE050075A5DC /* photo_gallery.json */; };
+		BB360DE12E09CE050075A5DC /* empty_gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = BB360DDB2E09CE050075A5DC /* empty_gallery.json */; };
+		BB360DE32E09D1000075A5DC /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB360DE22E09D1000075A5DC /* MockNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +117,17 @@
 		BB360DBE2E094B400075A5DC /* PreviewProvider+Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Photo.swift"; sourceTree = "<group>"; };
 		BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onFirstAppear.swift"; sourceTree = "<group>"; };
 		BB360DC32E0964E00075A5DC /* PhotoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRowView.swift; sourceTree = "<group>"; };
+		BB360DC72E0970BF0075A5DC /* PhotoDetailServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailServiceTests.swift; sourceTree = "<group>"; };
+		BB360DC82E0970BF0075A5DC /* PhotoDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelTests.swift; sourceTree = "<group>"; };
+		BB360DCD2E0979410075A5DC /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
+		BB360DCF2E0979FE0075A5DC /* MockPhotoDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoDetailService.swift; sourceTree = "<group>"; };
+		BB360DD12E097A500075A5DC /* MockPhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoProvider.swift; sourceTree = "<group>"; };
+		BB360DD42E09CA6C0075A5DC /* ErrorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModelTests.swift; sourceTree = "<group>"; };
+		BB360DD82E09CC750075A5DC /* PhotoProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProviderTests.swift; sourceTree = "<group>"; };
+		BB360DDB2E09CE050075A5DC /* empty_gallery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = empty_gallery.json; sourceTree = "<group>"; };
+		BB360DDC2E09CE050075A5DC /* photo_detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = photo_detail.json; sourceTree = "<group>"; };
+		BB360DDD2E09CE050075A5DC /* photo_gallery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = photo_gallery.json; sourceTree = "<group>"; };
+		BB360DE22E09D1000075A5DC /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,36 +344,39 @@
 			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
-		BB360D892E0805C60075A5DC /* DITests */ = {
+		BB360D892E0805C60075A5DC /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				BB360D882E0805C60075A5DC /* DependencyContainerTests.swift */,
 			);
-			path = DITests;
+			path = DI;
 			sourceTree = "<group>";
 		};
 		BB360D8B2E0805C60075A5DC /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				BB360D8A2E0805C60075A5DC /* MockNavigator.swift */,
+				BB360DD12E097A500075A5DC /* MockPhotoProvider.swift */,
+				BB360DE22E09D1000075A5DC /* MockNetwork.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		BB360D8D2E0805C60075A5DC /* NavigatorTests */ = {
+		BB360D8D2E0805C60075A5DC /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
 				BB360D8C2E0805C60075A5DC /* NavigatorTests.swift */,
 			);
-			path = NavigatorTests;
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		BB360D8E2E0805C60075A5DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BB360D8D2E0805C60075A5DC /* NavigatorTests */,
-				BB360D892E0805C60075A5DC /* DITests */,
+				BB360D8D2E0805C60075A5DC /* Navigator */,
+				BB360D892E0805C60075A5DC /* DI */,
 				BB360D8B2E0805C60075A5DC /* Mocks */,
+				BB360DD92E09CC750075A5DC /* Providers */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -377,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				BB360D922E0805C60075A5DC /* Photo List */,
+				BB360DC92E0970BF0075A5DC /* Photo Detail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -386,6 +412,8 @@
 			children = (
 				BB360D8E2E0805C60075A5DC /* Core */,
 				BB360D932E0805C60075A5DC /* Features */,
+				BB360DD62E09CA6C0075A5DC /* Shared */,
+				BB360DDE2E09CE050075A5DC /* Resources */,
 			);
 			path = PhotoGalleryTests;
 			sourceTree = "<group>";
@@ -470,6 +498,59 @@
 				BB360DC12E094F220075A5DC /* View+onFirstAppear.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB360DC92E0970BF0075A5DC /* Photo Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DCC2E0979320075A5DC /* Mocks */,
+				BB360DC72E0970BF0075A5DC /* PhotoDetailServiceTests.swift */,
+				BB360DC82E0970BF0075A5DC /* PhotoDetailViewModelTests.swift */,
+			);
+			path = "Photo Detail";
+			sourceTree = "<group>";
+		};
+		BB360DCC2E0979320075A5DC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DCD2E0979410075A5DC /* PhotoDetail.swift */,
+				BB360DCF2E0979FE0075A5DC /* MockPhotoDetailService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		BB360DD52E09CA6C0075A5DC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DD42E09CA6C0075A5DC /* ErrorViewModelTests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BB360DD62E09CA6C0075A5DC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DD52E09CA6C0075A5DC /* Components */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB360DD92E09CC750075A5DC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DD82E09CC750075A5DC /* PhotoProviderTests.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		BB360DDE2E09CE050075A5DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB360DDB2E09CE050075A5DC /* empty_gallery.json */,
+				BB360DDC2E09CE050075A5DC /* photo_detail.json */,
+				BB360DDD2E09CE050075A5DC /* photo_gallery.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,6 +647,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB360DDF2E09CE050075A5DC /* photo_detail.json in Resources */,
+				BB360DE02E09CE050075A5DC /* photo_gallery.json in Resources */,
+				BB360DE12E09CE050075A5DC /* empty_gallery.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,10 +704,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB360D952E0805C60075A5DC /* DependencyContainerTests.swift in Sources */,
+				BB360DCE2E0979410075A5DC /* PhotoDetail.swift in Sources */,
 				BB360D962E0805C60075A5DC /* MockNavigator.swift in Sources */,
+				BB360DE32E09D1000075A5DC /* MockNetwork.swift in Sources */,
+				BB360DDA2E09CC750075A5DC /* PhotoProviderTests.swift in Sources */,
 				BB360D972E0805C60075A5DC /* NavigatorTests.swift in Sources */,
 				BB360D982E0805C60075A5DC /* MockPhotoListService.swift in Sources */,
 				BB360D992E0805C60075A5DC /* PhotoListViewModelTests.swift in Sources */,
+				BB360DCA2E0970BF0075A5DC /* PhotoDetailViewModelTests.swift in Sources */,
+				BB360DD72E09CA6C0075A5DC /* ErrorViewModelTests.swift in Sources */,
+				BB360DCB2E0970BF0075A5DC /* PhotoDetailServiceTests.swift in Sources */,
+				BB360DD02E0979FE0075A5DC /* MockPhotoDetailService.swift in Sources */,
+				BB360DD22E097A500075A5DC /* MockPhotoProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

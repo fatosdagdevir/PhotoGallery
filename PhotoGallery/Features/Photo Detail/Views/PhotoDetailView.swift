@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
-    enum ViewState {
+    enum ViewState: Equatable {
         case loading
         case ready(photo: PhotoDetail)
         case error(viewModel: ErrorViewModel)
