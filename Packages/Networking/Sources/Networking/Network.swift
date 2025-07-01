@@ -26,7 +26,6 @@ public extension Networking {
     }
 }
 
-@available(macOS 12.0, iOS 16.0, *)
 public struct Network: Networking {
     enum InternalError: Error {
         case invalidURL

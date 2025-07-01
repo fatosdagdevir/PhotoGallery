@@ -1,10 +1,9 @@
 import Foundation
 
 public protocol EndpointProtocol {
-    var scheme: String { get }
-    var host: String { get }
+    var base: String { get }
     var path: String { get }
-    var queryItems: [URLQueryItem]? { get }
+    var queryParameters: [String: String]? { get }
 }
 
 public extension EndpointProtocol {

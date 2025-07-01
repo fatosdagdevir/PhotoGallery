@@ -29,8 +29,11 @@ final class PhotoProvider: PhotoProviding {
 
 // MARK: - Photo Gallery
 private struct PhotoGalleryEndpoint: EndpointProtocol {
-    let host = AppConstants.API.baseURL
+    let base = AppConstants.API.baseURL
     let path = "/photos"
+
+    
+    var queryParameters: [String : String]?
 }
 
 private struct PhotoGalleryRequest: RequestProtocol {
@@ -41,8 +44,10 @@ private struct PhotoGalleryRequest: RequestProtocol {
 
 // MARK: - Photo Detail
 private struct PhotoDetailEndpoint: EndpointProtocol {
-    let host = AppConstants.API.baseURL
+    let base = AppConstants.API.baseURL
     let path: String
+    
+    var queryParameters: [String : String]?
     
     init(id: Int) {
         self.path = "/photos/\(id)"
